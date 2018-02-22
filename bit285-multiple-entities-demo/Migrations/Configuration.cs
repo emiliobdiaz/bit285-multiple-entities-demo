@@ -22,59 +22,109 @@ namespace bit285_multiple_entities_demo.Migrations
                 {
                     BookID = 1,
                     Title = "Pride and Prejudice",
-                    Author = "Jane Austin",
+                    AuthorID = 1,
                     Price = 9.99M
                 },
                 new Book()
                 {
                     BookID = 2,
                     Title = "Northanger Abbey",
-                    Author = "Jane Austin",
+                    AuthorID = 1,
                     Price = 12.95M
                 },
                 new Book()
                 {
                     BookID = 3,
                     Title = "David Copperfield",
-                    Author = "Charles Dickens",
+                    AuthorID = 2,
                     Price = 15.00M
                 },
                 new Book()
                 {
                     BookID = 4,
                     Title = "The Wizard of EarthSea",
-                    Author = "Ursula Le Guin",
+                    AuthorID = 3,
                     Price = 8.95M
                 },
                 new Book()
                 {
                     BookID = 5,
                     Title = "The Tombs of Atuan",
-                    Author = "Ursula Le Guin",
+                    AuthorID = 3,
                     Price = 7.95M
                 },
                 new Book()
                 {
                     BookID = 6,
                     Title = "The Farthest Shore",
-                    Author = "Ursula Le Guin",
+                    AuthorID = 3,
                     Price = 9.95M
-
                 });
+
             //TODO: Add several Author records
+         context.Author.AddOrUpdate(a => a.AuthorID,
+            new Author()
+            {
+                AuthorID = 1,
+                AuthorName = "Jane Austen",
+                AuthorAddress = "Winchester, United Kingdom",
+                AuthorPhone = "0",
+            },
+            new Author()
+            {
+                AuthorID = 2,
+                AuthorName = "Charles Dickens",
+                AuthorAddress = "Gads Hill Place, United Kingdom",
+                AuthorPhone = "0",
+            },
+            new Author()
+            {
+                AuthorID = 3,
+                AuthorName = "Ursula Le Guin",
+                AuthorAddress = "Portland, OR",
+                AuthorPhone = "123.456.7890",
+            });
 
             //TODO: Add several Member records
+            context.Members.AddOrUpdate(m => m.MemberID,
+            new Member()
+            {
+                MemberID = 1,
+                MemberName = "Joe Shmoe",
+                MemberAddress = "123 Fake St",
+                MemberPhone = "555.555.5555",
+            },
+            new Member()
+            {
+                MemberID = 2,
+                MemberName = "Susie Lee",
+                MemberAddress = "123 Sunny Ave SE",
+                MemberPhone = "000.000.0000",
+            });
 
             //TODO: Add additional Purchase records
             context.Purchases.AddOrUpdate(p => p.PurchaseID,
-                new Purchase()
+                new IndyBooks.Models.Purchase()
                 {
                     PurchaseID = 1,
                     Amount = 10.00M,
-                    BookID = 6
-                    //TODO: Add the MemberID value
+                    BookID = 6,
+                    MemberID = 1,
+                },
+                new IndyBooks.Models.Purchase()
+                {
+                    PurchaseID = 2,
+                    Amount = 7.95M,
+                    BookID = 5,
+                    MemberID = 2,
+                },
+                new IndyBooks.Models.Purchase()
+                {
+                    PurchaseID = 3,
+                    Amount = 8.95M,
+                    BookID = 4,
+                    MemberID = 1,
                 });
-
         }
     }
 }

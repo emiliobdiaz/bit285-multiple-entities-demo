@@ -137,9 +137,9 @@
     <Compile Include="Migrations\201802192159270_intial.Designer.cs">
       <DependentUpon>201802192159270_intial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201802192330219_purchase.cs" />
-    <Compile Include="Migrations\201802192330219_purchase.Designer.cs">
-      <DependentUpon>201802192330219_purchase.cs</DependentUpon>
+    <Compile Include="Migrations\201802202346178_Purchase.cs" />
+    <Compile Include="Migrations\201802202346178_Purchase.Designer.cs">
+      <DependentUpon>201802202346178_Purchase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Author.cs" />
@@ -176,8 +176,8 @@
     <EmbeddedResource Include="Migrations\201802192159270_intial.resx">
       <DependentUpon>201802192159270_intial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802192330219_purchase.resx">
-      <DependentUpon>201802192330219_purchase.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201802202346178_Purchase.resx">
+      <DependentUpon>201802202346178_Purchase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
